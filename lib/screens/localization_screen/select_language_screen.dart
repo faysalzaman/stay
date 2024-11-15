@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:stay/screens/auth/EmailAuth/signin_screen.dart';
 import 'package:stay/screens/auth/Welcomeback/welcomeback_screen.dart';
 import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
@@ -181,7 +180,9 @@ class _LanguageButtonState extends State<_LanguageButton>
               animation: _controller,
               builder: (context, child) {
                 return Transform.rotate(
-                  angle: 0.1 * sin(_controller.value * 2 * 3.14159),
+                  angle: context.locale.languageCode == 'ar'
+                      ? -0.1 * sin(_controller.value * 2 * pi)
+                      : 0.1 * sin(_controller.value * 2 * pi),
                   child: AnimatedScale(
                     scale: widget.isSelected ? 1.2 : 1.0,
                     duration: const Duration(milliseconds: 200),
