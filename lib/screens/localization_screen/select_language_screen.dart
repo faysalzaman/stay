@@ -50,14 +50,14 @@ class SelectLanguageScreen extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF2B5989),
+                      color: AppColors.primary,
                     ),
                   ),
                   Text(
                     'lets_get_started'.tr(),
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Color(0xFF2B5989),
+                      color: AppColors.primary,
                     ),
                   ),
                   const SizedBox(height: 30),
@@ -65,7 +65,7 @@ class SelectLanguageScreen extends StatelessWidget {
                     'select_language'.tr(),
                     style: const TextStyle(
                       fontSize: 20,
-                      color: Color(0xFF2B5989),
+                      color: AppColors.primary,
                     ),
                   ),
                   const SizedBox(height: 20),
