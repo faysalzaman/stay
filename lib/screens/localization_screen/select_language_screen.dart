@@ -17,8 +17,8 @@ class SelectLanguageScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 40),
               Image.asset(
-                'assets/images/logo.png',
-                height: 150,
+                'assets/logo1.png',
+                height: 80,
                 fit: BoxFit.fill,
               ),
               const SizedBox(height: 40),
@@ -119,7 +119,7 @@ class _LanguageButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFFE5EDF5) : Colors.white,
+          color: isSelected ? Colors.blue : Colors.white,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: const Color(0xFFE5EDF5),
@@ -131,9 +131,9 @@ class _LanguageButton extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               language,
-              style: const TextStyle(
+              style:  TextStyle(
                 fontSize: 16,
-                color: Color(0xFF2B5989),
+                color: isSelected ? Colors.white :  Color(0xFF2B5989),
               ),
             ),
           ],
