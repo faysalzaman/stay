@@ -38,63 +38,63 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                     horizontal: 20,
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       AppText.heading("Welcome",
                           maxline: 2, textAlign: TextAlign.center),
-                      Row(
-                        children: [
-                          Lottie.asset(
-                            'assets/lottie/language.json',
-                            fit: BoxFit.contain,
-                            height: 40,
-                          ),
-                          Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/us_flag.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                              AppText.normal(
-                                "English",
-                                fontsize: 8,
-                                color: AppColors.onboadingsubtextcolor,
-                              ),
-                            ],
-                          ),
-                          Transform.scale(
-                            scale: 0.6, // Scale down the switch size
-                            child: Switch(
-                              activeColor: AppColors.bgcolor,
-                              inactiveTrackColor:
-                              AppColors.onboardingarrowbackcolor,
-                              inactiveThumbColor:
-                              AppColors.onboadingsubtextcolor,
-                              value: _switchValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  _switchValue = value;
-                                });
-                              },
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/uae_flag.png",
-                                height: 20,
-                                width: 20,
-                              ),
-                              AppText.normal(
-                                "Arabic",
-                                fontsize: 8,
-                                color: AppColors.onboadingsubtextcolor,
-                              ),
-                            ],
-                          ),
-                        ],
-                      )
+                      // Row(
+                      //   children: [
+                      //     Lottie.asset(
+                      //       'assets/lottie/language.json',
+                      //       fit: BoxFit.contain,
+                      //       height: 40,
+                      //     ),
+                      //     Column(
+                      //       children: [
+                      //         Image.asset(
+                      //           "assets/images/us_flag.png",
+                      //           height: 20,
+                      //           width: 20,
+                      //         ),
+                      //         AppText.normal(
+                      //           "English",
+                      //           fontsize: 8,
+                      //           color: AppColors.onboadingsubtextcolor,
+                      //         ),
+                      //       ],
+                      //     ),
+                      //     Transform.scale(
+                      //       scale: 0.6, // Scale down the switch size
+                      //       child: Switch(
+                      //         activeColor: AppColors.bgcolor,
+                      //         inactiveTrackColor:
+                      //         AppColors.onboardingarrowbackcolor,
+                      //         inactiveThumbColor:
+                      //         AppColors.onboadingsubtextcolor,
+                      //         value: _switchValue,
+                      //         onChanged: (value) {
+                      //           setState(() {
+                      //             _switchValue = value;
+                      //           });
+                      //         },
+                      //       ),
+                      //     ),
+                      //     Column(
+                      //       children: [
+                      //         Image.asset(
+                      //           "assets/images/uae_flag.png",
+                      //           height: 20,
+                      //           width: 20,
+                      //         ),
+                      //         AppText.normal(
+                      //           "Arabic",
+                      //           fontsize: 8,
+                      //           color: AppColors.onboadingsubtextcolor,
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ],
+                      // )
                     ],
                   )),
               SizedBox(
