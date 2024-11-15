@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stay/screens/auth/EmailAuth/Forget/forget_password_screen.dart';
+import 'package:stay/screens/auth/EmailAuth/signup_screen.dart';
 import 'package:stay/screens/home/home_screen.dart';
 import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
@@ -189,23 +190,57 @@ class _SigninScreenState extends State<SigninScreen> {
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 130,
-                    height: 1.2,
-                    color: AppColors.onboardingarrowbackcolor,
+                    width: 100,
+                    height: 1,
+                    color: Colors.grey.shade300,
                   ),
-                  AppText.subHeading("Or", fontWeight: FontWeight.w500),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: AppText.normal(
+                      "Or Sign in with",
+                      color: Colors.grey.shade600,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                   Container(
-                    width: 130,
-                    height: 1.2,
-                    color: AppColors.onboardingarrowbackcolor,
+                    width: 100,
+                    height: 1,
+                    color: Colors.grey.shade300,
                   ),
                 ],
               ),
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    // Handle Google sign in
+                  },
+                  child: Image.asset(
+                    'assets/images/google.png',
+                    height: 40,
+                    width: 40,
+                  ),
+                ),
+                SizedBox(width: 30),
+                GestureDetector(
+                  onTap: () {
+                    // Handle Facebook sign in
+                  },
+                  child: Image.asset(
+                    'assets/images/facebook.png',
+                    height: 40,
+                    width: 40,
+                  ),
+                ),
+              ],
             ),
             SizedBox(height: 20),
             Padding(
@@ -254,7 +289,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         fontWeight: FontWeight.bold),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pop(context);
+                        AppNavigator.push(context, const SignupScreen());
                       },
                       child: AppText.normal("Sign Up",
                           fontWeight: FontWeight.bold,

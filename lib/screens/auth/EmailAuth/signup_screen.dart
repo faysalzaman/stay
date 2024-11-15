@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stay/screens/auth/EmailAuth/signin_screen.dart';
 import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
 import 'package:stay/utils/globalvariables.dart';
@@ -196,6 +197,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 buttonborderRadius: 12,
                 onPressed: () {
                   // AppNavigator.goToPage(context: context, screen: PhonenumberScreen());
+                  AppNavigator.pushReplacement(context, const SigninScreen());
                 },
                 child: AppText.heading(
                   "Sign Up",
