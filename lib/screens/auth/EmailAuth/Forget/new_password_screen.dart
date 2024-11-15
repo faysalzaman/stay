@@ -7,6 +7,7 @@ import 'package:stay/widgets/ElevatedButtonWidget.dart';
 import 'package:stay/widgets/PwdTextFormFieldWidget.dart';
 
 import 'package:stay/widgets/text_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class NewPasswordScreen extends StatefulWidget {
   const NewPasswordScreen({super.key});
@@ -68,13 +69,13 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
             SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AppText.heading("Reset Password", maxline: 2),
+              child: AppText.heading(context.tr("reset_password"), maxline: 2),
             ),
             SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: AppText.subHeading(
-                "Please enter your email in order to receive OTP \non your email.",
+                context.tr("reset_password_message"),
                 maxline: 2,
                 color: AppColors.onboadingsubtextcolor,
               ),
@@ -82,8 +83,8 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
             SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child:
-                  AppText.subHeading("Password", fontWeight: FontWeight.bold),
+              child: AppText.subHeading(context.tr("password"),
+                  fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 10,
@@ -97,7 +98,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AppText.subHeading("Confirm Password",
+              child: AppText.subHeading(context.tr("confirm_password"),
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(
@@ -123,7 +124,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   AppNavigator.pushReplacement(context, const SigninScreen());
                 },
                 child: AppText.heading(
-                  "Submit",
+                  context.tr("submit"),
                   letterSpacing: 1.0,
                   fontsize: 14,
                   color: Colors.white,

@@ -8,6 +8,7 @@ import 'package:stay/widgets/TextFormFieldWidget.dart';
 
 import 'package:stay/widgets/countrycode_widget.dart';
 import 'package:stay/widgets/text_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class PhonenumberScreen extends StatefulWidget {
   const PhonenumberScreen({super.key});
@@ -74,7 +75,7 @@ class _PhonenumberScreenState extends State<PhonenumberScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    AppText.heading("Login with Phone \nNumber", maxline: 2),
+                    AppText.heading("phone_number".tr(), maxline: 2),
                     Lottie.asset(
                       'assets/lottie/number.json',
                       fit: BoxFit.contain,
@@ -89,11 +90,8 @@ class _PhonenumberScreenState extends State<PhonenumberScreen> {
               padding: EdgeInsets.symmetric(
                 horizontal: 20,
               ),
-              child: AppText.subHeading(
-                  "Please enter your phone number so we can send \n"
-                  "you an OTP for Verification.",
-                  maxline: 2,
-                  color: AppColors.onboadingsubtextcolor),
+              child: AppText.subHeading("phone_hint".tr(),
+                  maxline: 2, color: AppColors.onboadingsubtextcolor),
             ),
             SizedBox(
               height: 70,
@@ -107,14 +105,12 @@ class _PhonenumberScreenState extends State<PhonenumberScreen> {
                 TextFormFieldWgt(
                   width: 230,
                   height: 48,
-                  hintText: "01774",
+                  hintText: "phone_hint".tr(),
                   keyboardType: TextInputType.number,
                 )
               ],
             ),
-            SizedBox(
-              height: 40,
-            ),
+            SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: ElevatedButtonWidget(
@@ -126,7 +122,7 @@ class _PhonenumberScreenState extends State<PhonenumberScreen> {
                   AppNavigator.push(context, const OtpVerificationScreen());
                 },
                 child: AppText.heading(
-                  "Send OTP",
+                  "send_code".tr(),
                   letterSpacing: 1.0,
                   fontsize: 14,
                   color: Colors.white,

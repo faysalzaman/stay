@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:stay/screens/auth/PhoneNumberAuth/numberverified_screen.dart';
 import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
@@ -100,10 +101,10 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   ),
                 ),
                 SizedBox(height: 30),
-                AppText.heading("OTP Verification"),
+                AppText.heading("otp_verification".tr()),
                 SizedBox(height: 15),
                 AppText.subHeading(
-                  "Enter the code from the sms we sent to",
+                  "enter_code_sms".tr(),
                   color: AppColors.onboadingsubtextcolor,
                   fontWeight: FontWeight.w400,
                 ),
@@ -175,12 +176,12 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     AppText.subHeading(
-                      "I didn't receive any code.",
+                      "didnt_receive_code".tr(),
                       color: AppColors.onboadingsubtextcolor,
                       fontWeight: FontWeight.w400,
                     ),
                     AppText.subHeading(
-                      "RESEND",
+                      "resend".tr(),
                       color: AppColors.bgcolor,
                       underline: true,
                       fontWeight: FontWeight.w400,
@@ -202,7 +203,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   AppNavigator.push(context, const NumberVerifiedScreen());
                 },
                 child: AppText.heading(
-                  "Activate",
+                  "activate".tr(),
                   letterSpacing: 1.0,
                   fontsize: 14,
                   color: Colors.white,

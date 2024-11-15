@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
@@ -105,15 +106,14 @@ class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   children: [
-                    AppText.heading("Check Your Email", maxline: 2),
+                    AppText.heading(context.tr('check_your_email'), maxline: 2),
                   ],
                 )),
             SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: AppText.subHeading(
-                "Please check your email for OTP and enter it here"
-                "\n in order to continue.",
+                context.tr('check_email_otp_message'),
                 maxline: 2,
                 color: AppColors.onboadingsubtextcolor,
               ),
@@ -182,12 +182,12 @@ class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 AppText.subHeading(
-                  "I didn't receive any code.",
+                  context.tr('didnt_receive_code'),
                   color: AppColors.onboadingsubtextcolor,
                   fontWeight: FontWeight.w400,
                 ),
                 AppText.subHeading(
-                  "RESEND",
+                  context.tr('resend'),
                   color: AppColors.bgcolor,
                   underline: true,
                   fontWeight: FontWeight.w400,
@@ -207,7 +207,7 @@ class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
                   AppNavigator.push(context, const NewPasswordScreen());
                 },
                 child: AppText.heading(
-                  "Continue",
+                  context.tr('continue'),
                   letterSpacing: 1.0,
                   fontsize: 14,
                   color: Colors.white,

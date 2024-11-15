@@ -5,8 +5,8 @@ import 'package:stay/utils/app_navigator.dart';
 import 'package:stay/utils/globalvariables.dart';
 import 'package:stay/widgets/ElevatedButtonWidget.dart';
 import 'package:stay/widgets/TextFormFieldWidget.dart';
-
 import 'package:stay/widgets/text_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});
@@ -28,7 +28,6 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
       ),
       body: Stack(
         children: [
-          // Main content above the button
           SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,14 +68,13 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 SizedBox(height: 40),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: AppText.heading("Forget Password", maxline: 2),
+                  child: AppText.heading("forgot_password".tr(), maxline: 2),
                 ),
                 SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: AppText.subHeading(
-                    "Please enter your email in order to receive OTP"
-                    "\n on your email. ",
+                    "reset_password_message".tr(),
                     maxline: 2,
                     color: AppColors.onboadingsubtextcolor,
                   ),
@@ -84,13 +82,11 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 SizedBox(height: 50),
                 TextFormFieldWgt(
                   width: w(context),
-                  hintText: "abc@domain.com",
+                  hintText: "email_hint".tr(),
                 ),
               ],
             ),
           ),
-
-          // Button at the bottom center
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
@@ -104,7 +100,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   AppNavigator.push(context, const ForgotOtpScreen());
                 },
                 child: AppText.heading(
-                  "Send OTP",
+                  "send_code".tr(),
                   letterSpacing: 1.0,
                   fontsize: 14,
                   color: Colors.white,

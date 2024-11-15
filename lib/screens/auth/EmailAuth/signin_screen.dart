@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:stay/screens/auth/EmailAuth/Forget/forget_password_screen.dart';
 import 'package:stay/screens/auth/EmailAuth/signup_screen.dart';
 import 'package:stay/screens/home/home_screen.dart';
@@ -10,6 +11,7 @@ import 'package:stay/widgets/PwdTextFormFieldWidget.dart';
 import 'package:stay/widgets/TextFormFieldWidget.dart';
 
 import 'package:stay/widgets/text_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
@@ -75,14 +77,14 @@ class _SigninScreenState extends State<SigninScreen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AppText.heading("Sign In with Email", maxline: 2),
+              child: AppText.heading("sign_in".tr(), maxline: 2),
             ),
             SizedBox(
               height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AppText.subHeading("Please enter your details to sign in.",
+              child: AppText.subHeading("welcome_message".tr(),
                   maxline: 2, color: AppColors.onboadingsubtextcolor),
             ),
             SizedBox(
@@ -90,22 +92,23 @@ class _SigninScreenState extends State<SigninScreen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AppText.subHeading("Email", fontWeight: FontWeight.bold),
+              child:
+                  AppText.subHeading("email".tr(), fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 10,
             ),
             TextFormFieldWgt(
               width: w(context),
-              hintText: "abc@domain.com",
+              hintText: "email_hint".tr(),
             ),
             SizedBox(
               height: 15,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child:
-                  AppText.subHeading("Password", fontWeight: FontWeight.bold),
+              child: AppText.subHeading("password".tr(),
+                  fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 10,
@@ -142,14 +145,15 @@ class _SigninScreenState extends State<SigninScreen> {
                         Row(
                           //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            AppText.normal("Remember me", color: Colors.grey),
+                            AppText.normal("remember_me".tr(),
+                                color: Colors.grey),
                             Spacer(),
                             GestureDetector(
                               onTap: () {
                                 AppNavigator.push(
                                     context, const ForgetPasswordScreen());
                               },
-                              child: AppText.normal("Forgot Password?",
+                              child: AppText.normal("forgot_password".tr(),
                                   color: AppColors.bgcolor,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -178,7 +182,7 @@ class _SigninScreenState extends State<SigninScreen> {
                   AppNavigator.pushReplacement(context, const HomeScreen());
                 },
                 child: AppText.heading(
-                  "Sign In",
+                  "sign_in".tr(),
                   letterSpacing: 1.0,
                   fontsize: 14,
                   color: Colors.white,
@@ -202,7 +206,7 @@ class _SigninScreenState extends State<SigninScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: AppText.normal(
-                      "Or Sign in with",
+                      "or_sign_in_with".tr(),
                       color: Colors.grey.shade600,
                       fontWeight: FontWeight.w500,
                     ),
@@ -267,7 +271,7 @@ class _SigninScreenState extends State<SigninScreen> {
                         width: 17,
                       ),
                       AppText.subHeading(
-                        "Continue as a Guest",
+                        "continue_as_guest".tr(),
                         letterSpacing: 1.0,
                         color: Colors.black,
                         textAlign: TextAlign.center,
@@ -285,13 +289,14 @@ class _SigninScreenState extends State<SigninScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    AppText.normal("Don\'t have an account? ",
+                    AppText.normal("dont_have_account".tr(),
                         fontWeight: FontWeight.bold),
+                    5.width,
                     GestureDetector(
                       onTap: () {
                         AppNavigator.push(context, const SignupScreen());
                       },
-                      child: AppText.normal("Sign Up",
+                      child: AppText.normal("sign_up".tr(),
                           fontWeight: FontWeight.bold,
                           underline: true,
                           color: AppColors.bgcolor),

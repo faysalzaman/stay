@@ -9,6 +9,7 @@ import 'package:stay/widgets/TextFormFieldWidget.dart';
 import 'package:stay/widgets/text_widget.dart';
 
 import '../../../widgets/ElevatedButtonWidget.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -74,43 +75,33 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AppText.heading("Sign Up with Email", maxline: 2),
+              child: AppText.heading("sign_up".tr(), maxline: 2),
             ),
             SizedBox(
               height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AppText.subHeading("Please enter your details to sign up.",
-                  maxline: 2, color: AppColors.onboadingsubtextcolor),
+              child: AppText.subHeading(
+                "fill_details".tr(),
+                maxline: 2,
+                color: AppColors.onboadingsubtextcolor,
+              ),
             ),
             SizedBox(
               height: 30,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AppText.subHeading("Name", fontWeight: FontWeight.bold),
+              child:
+                  AppText.subHeading("name".tr(), fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 10,
             ),
             TextFormFieldWgt(
               width: w(context),
-              hintText: "John Doe",
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AppText.subHeading("Email", fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextFormFieldWgt(
-              width: w(context),
-              hintText: "abc@domain.com",
+              hintText: "name_hint".tr(),
             ),
             SizedBox(
               height: 15,
@@ -118,7 +109,22 @@ class _SignupScreenState extends State<SignupScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child:
-                  AppText.subHeading("Password", fontWeight: FontWeight.bold),
+                  AppText.subHeading("email".tr(), fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextFormFieldWgt(
+              width: w(context),
+              hintText: "email_hint".tr(),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: AppText.subHeading("password".tr(),
+                  fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: 10,
@@ -135,8 +141,7 @@ class _SignupScreenState extends State<SignupScreen> {
               child: Row(
                 children: [
                   Transform.scale(
-                    scale:
-                        0.8, // Adjust this value to control the checkbox size
+                    scale: 0.8,
                     child: Checkbox(
                       value: _isChecked,
                       onChanged: (bool? value) {
@@ -144,42 +149,28 @@ class _SignupScreenState extends State<SignupScreen> {
                           _isChecked = value ?? false;
                         });
                       },
-                      activeColor:
-                          AppColors.bgcolor, // Customize checkbox color
+                      activeColor: AppColors.bgcolor,
                     ),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        height: 15,
-                      ),
+                      SizedBox(height: 15),
                       Row(
                         children: [
-                          AppText.normal("By signing up, you’ve agree to our ",
-                              maxline: 2,
-                              color: AppColors.onboadingsubtextcolor),
-                          AppText.normal("terms and",
-                              maxline: 2,
-                              color: AppColors.bgcolor,
-                              underline: true),
+                          AppText.normal(
+                            "agree_with".tr(),
+                            maxline: 2,
+                            color: AppColors.onboadingsubtextcolor,
+                          ),
+                          AppText.normal(
+                            "terms_conditions".tr(),
+                            maxline: 2,
+                            color: AppColors.bgcolor,
+                            underline: true,
+                          ),
                         ],
                       ),
-                      Row(
-                        children: [
-                          AppText.normal("conditions",
-                              maxline: 2,
-                              color: AppColors.bgcolor,
-                              underline: true),
-                          AppText.normal(" and ",
-                              maxline: 2,
-                              color: AppColors.onboadingsubtextcolor),
-                          AppText.normal("Privacy Policy",
-                              maxline: 2,
-                              color: AppColors.bgcolor,
-                              underline: true),
-                        ],
-                      )
                     ],
                   )
                 ],
@@ -196,11 +187,10 @@ class _SignupScreenState extends State<SignupScreen> {
                 buttonWidth: w(context),
                 buttonborderRadius: 12,
                 onPressed: () {
-                  // AppNavigator.goToPage(context: context, screen: PhonenumberScreen());
                   AppNavigator.pushReplacement(context, const SigninScreen());
                 },
                 child: AppText.heading(
-                  "Sign Up",
+                  "sign_up".tr(),
                   letterSpacing: 1.0,
                   fontsize: 14,
                   color: Colors.white,
@@ -212,23 +202,28 @@ class _SignupScreenState extends State<SignupScreen> {
               height: 50,
             ),
             Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    AppText.normal("Already have an account? ",
-                        fontWeight: FontWeight.bold),
-                    GestureDetector(
-                      onTap: () {
-                        AppNavigator.pop(context);
-                      },
-                      child: AppText.normal("Sign In",
-                          fontWeight: FontWeight.bold,
-                          underline: true,
-                          color: AppColors.bgcolor),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AppText.normal(
+                    "already_have_account".tr(),
+                    fontWeight: FontWeight.bold,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      AppNavigator.pop(context);
+                    },
+                    child: AppText.normal(
+                      "sign_in".tr(),
+                      fontWeight: FontWeight.bold,
+                      underline: true,
+                      color: AppColors.bgcolor,
                     ),
-                  ],
-                )),
+                  ),
+                ],
+              ),
+            ),
             SizedBox(
               height: 30,
             ),

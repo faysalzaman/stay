@@ -33,7 +33,7 @@
   "phone_number": "رقم الهاتف",
   "phone_hint": "أدخل رقم هاتفك",
   "reset_password": "إعادة تعيين كلمة المرور",
-  "reset_password_message": "أدخل بريدك الإلكتروني لاستلام رمز التحقق",
+  "reset_password_message": "يرجى إدخال بريدك الإلكتروني لتلقي رمز التحقق\nعلى بريدك الإلكتروني",
   "send_code": "إرسال الرمز",
   "back_to_login": "العودة لتسجيل الدخول",
   "email_required": "الرجاء إدخال عنوان بريدك الإلكتروني",
@@ -43,5 +43,16 @@
   "home": "الرئيسية",
   "explore": "استكشاف",
   "favourite": "المفضلة",
-  "profile": "الملف الشخصي"
+  "profile": "الملف الشخصي",
+  "continue_as_guest": "المتابعة كزائر",
+  "remember_me": "تذكرني",
+  "phone_number_verified": "تم التحقق من رقم الهاتف",
+  "redirect_message": "سيتم توجيهك إلى الصفحة الرئيسية\nخلال لحظات",
+  "otp_verification": "التحقق من رمز OTP",
+  "enter_code_sms": "أدخل الرمز من الرسالة النصية التي أرسلناها إلى",
+  "didnt_receive_code": "لم أستلم أي رمز.",
+  "resend": "إعادة إرسال",
+  "submit": "تأكيد",
+  "check_your_email": "تحقق من بريدك الإلكتروني",
+  "check_email_otp_message": "يرجى التحقق من بريدك الإلكتروني للحصول على رمز OTP وإدخاله هنا للمتابعة"
 }
