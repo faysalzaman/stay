@@ -57,5 +57,7 @@
   "enter_phone_for_otp": "Please enter your phone number so we can send you an OTP for Verification.",
   "submit": "Submit",
   "check_your_email": "Check Your Email",
-  "check_email_otp_message": "Please check your email for OTP and enter it here in order to continue."
+  "check_email_otp_message": "Please check your email for OTP and enter it here in order to continue.",
+  "sign_up_with_email": "Sign Up with Email",
+  "use_phone_number": "Use Phone Number"
 }
