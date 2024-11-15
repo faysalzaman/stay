@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:stay/screens/localization_screen/select_language_screen.dart';
 import 'package:stay/utils/app_navigator.dart';
 
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 4),
+      duration: const Duration(seconds: 5),
       vsync: this,
     );
 
@@ -51,25 +52,57 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            return FadeTransition(
-              opacity: _fadeAnimation,
-              child: Transform.scale(
-                scale: _scaleAnimation.value,
-                child: Image.asset(
-                  'assets/splash.jpg',
-                  width: 500, // Adjust size as needed
-                  height: 500, // Adjust size as needed
-                  fit: BoxFit.fill,
-                ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          // Background Lottie Animation
+          Positioned.fill(
+            child: Lottie.asset(
+              'assets/lottie/splash_animation.json', // You'll need to add this file
+              fit: BoxFit.cover,
+              animate: true,
+              options: LottieOptions(
+                enableMergePaths: true,
               ),
-            );
-          },
-        ),
+            ),
+          ),
+          // Gradient overlay to ensure logo visibility
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.white.withOpacity(0.3),
+                  Colors.white.withOpacity(0.7),
+                ],
+              ),
+            ),
+          ),
+          // Centered logo with animations
+          Center(
+            child: AnimatedBuilder(
+              animation: _controller,
+              builder: (context, child) {
+                return FadeTransition(
+                  opacity: _fadeAnimation,
+                  child: Transform.scale(
+                    scale: _scaleAnimation.value,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        'assets/splash1.png',
+                        width: 400,
+                        height: 400,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

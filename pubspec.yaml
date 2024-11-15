@@ -40,6 +40,7 @@ dependencies:
   cached_network_image: ^3.4.1
   easy_localization: ^3.0.7
   pin_code_fields: ^8.0.1
+  lottie: ^3.1.3
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +70,7 @@ flutter:
     - assets/translations/
     - assets/translations/ar.json
     - assets/translations/en.json
+    - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
