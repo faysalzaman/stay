@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:stay/screens/auth/EmailAuth/Forget/forgototp_screen.dart';
 import 'package:stay/utils/app_colors.dart';
+import 'package:stay/utils/app_navigator.dart';
 import 'package:stay/utils/globalvariables.dart';
 import 'package:stay/widgets/ElevatedButtonWidget.dart';
 import 'package:stay/widgets/TextFormFieldWidget.dart';
-import 'package:stay/widgets/app_navigator.dart';
+
 import 'package:stay/widgets/text_widget.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
@@ -76,7 +76,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: AppText.subHeading(
                     "Please enter your email in order to receive OTP"
-                        "\n on your email. ",
+                    "\n on your email. ",
                     maxline: 2,
                     color: AppColors.onboadingsubtextcolor,
                   ),
@@ -86,7 +86,6 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   width: w(context),
                   hintText: "abc@domain.com",
                 ),
-
               ],
             ),
           ),
@@ -95,14 +94,14 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               child: ElevatedButtonWidget(
                 buttonBackgroundColor: AppColors.bgcolor,
                 buttonHeight: 52,
                 buttonWidth: w(context),
                 buttonborderRadius: 12,
                 onPressed: () {
-                  AppNavigator.goToPage(context: context, screen: ForgotOtpScreen());
+                  AppNavigator.push(context, const ForgotOtpScreen());
                 },
                 child: AppText.heading(
                   "Send OTP",

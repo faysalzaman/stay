@@ -5,8 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 import 'package:stay/screens/auth/PhoneNumberAuth/numberverified_screen.dart';
 import 'package:stay/utils/app_colors.dart';
+import 'package:stay/utils/app_navigator.dart';
 import 'package:stay/widgets/ElevatedButtonWidget.dart';
-import 'package:stay/widgets/app_navigator.dart';
+
 import 'package:stay/widgets/text_widget.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
@@ -40,8 +41,10 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
 
   String formatTime(int seconds) {
     final duration = Duration(seconds: seconds);
-    final minutesStr = duration.inMinutes.remainder(60).toString().padLeft(2, '0');
-    final secondsStr = duration.inSeconds.remainder(60).toString().padLeft(2, '0');
+    final minutesStr =
+        duration.inMinutes.remainder(60).toString().padLeft(2, '0');
+    final secondsStr =
+        duration.inSeconds.remainder(60).toString().padLeft(2, '0');
     return "$minutesStr:$secondsStr";
   }
 
@@ -105,7 +108,8 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   fontWeight: FontWeight.w400,
                 ),
                 SizedBox(height: 10),
-                AppText.subHeading("+8801774280874", fontWeight: FontWeight.w500),
+                AppText.subHeading("+8801774280874",
+                    fontWeight: FontWeight.w500),
                 SizedBox(height: 20),
                 // Timer display in MM:SS format
                 AppText.subHeading(
@@ -125,17 +129,26 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   defaultPinTheme: PinTheme(
                     width: 48,
                     height: 48,
-                    textStyle: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.w400, fontFamily: GoogleFonts.inter().fontFamily),
+                    textStyle: TextStyle(
+                        fontSize: 24,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: GoogleFonts.inter().fontFamily),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: AppColors.onboardingarrowbackcolor),
+                      border:
+                          Border.all(color: AppColors.onboardingarrowbackcolor),
                     ),
                   ),
                   focusedPinTheme: PinTheme(
                     width: 48,
                     height: 48,
-                    textStyle: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.w400, fontFamily: GoogleFonts.inter().fontFamily),
+                    textStyle: TextStyle(
+                        fontSize: 24,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: GoogleFonts.inter().fontFamily),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
@@ -145,7 +158,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   submittedPinTheme: PinTheme(
                     width: 48,
                     height: 48,
-                    textStyle: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.w400, fontFamily: GoogleFonts.inter().fontFamily),
+                    textStyle: TextStyle(
+                        fontSize: 24,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: GoogleFonts.inter().fontFamily),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
@@ -178,10 +195,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
               child: ElevatedButtonWidget(
                 buttonBackgroundColor: AppColors.bgcolor,
                 buttonHeight: 52,
-                buttonWidth: MediaQuery.of(context).size.width * 0.9, // Make button responsive to screen width
+                buttonWidth: MediaQuery.of(context).size.width *
+                    0.9, // Make button responsive to screen width
                 buttonborderRadius: 12,
                 onPressed: () {
-                  AppNavigator.goToPage(context: context, screen: NumberVerifiedScreen());
+                  AppNavigator.push(context, const NumberVerifiedScreen());
                 },
                 child: AppText.heading(
                   "Activate",

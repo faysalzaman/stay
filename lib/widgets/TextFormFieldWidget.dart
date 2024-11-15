@@ -1,4 +1,4 @@
-
+// ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,9 +38,10 @@ class TextFormFieldWgt extends StatelessWidget {
     this.hintText,
     this.width,
     this.enable,
-     this.labelText,
+    this.labelText,
     this.autofocus = false,
-    this.keyboardType, this.suffixIcon,
+    this.keyboardType,
+    this.suffixIcon,
   }) : super(key: key);
 
   @override
@@ -60,15 +61,19 @@ class TextFormFieldWgt extends StatelessWidget {
             cursorColor: AppColors.bgcolor,
             maxLength: maxLength,
             style: TextStyle(
-                fontSize: fontSize ?? 14,
-                color: fontColor ?? Colors.black,
-                fontFamily: GoogleFonts.inter().fontFamily,),
+              fontSize: fontSize ?? 14,
+              color: fontColor ?? Colors.black,
+              fontFamily: GoogleFonts.inter().fontFamily,
+            ),
             cursorWidth: 1,
             decoration: InputDecoration(
               floatingLabelBehavior: FloatingLabelBehavior.always,
               labelText: labelText,
               contentPadding: EdgeInsets.all(18),
-              labelStyle: TextStyle(color: Colors.white,fontFamily: GoogleFonts.ptSans().fontFamily,fontSize: 14),
+              labelStyle: TextStyle(
+                  color: Colors.white,
+                  fontFamily: GoogleFonts.ptSans().fontFamily,
+                  fontSize: 14),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(color: Colors.black12),
@@ -80,10 +85,11 @@ class TextFormFieldWgt extends StatelessWidget {
               hintText: hintText ?? "Enter Value",
               suffixIcon: suffixIcon,
               hintStyle: TextStyle(
-                  color: Colors.grey,
-                  fontSize: fontSize ?? 14,
-                  fontWeight: FontWeight.w100,
-                  fontFamily: GoogleFonts.ptSans().fontFamily,),
+                color: Colors.grey,
+                fontSize: fontSize ?? 14,
+                fontWeight: FontWeight.w100,
+                fontFamily: GoogleFonts.ptSans().fontFamily,
+              ),
               errorBorder: InputBorder.none,
               errorStyle: TextStyle(color: Colors.red, fontSize: 08),
             ),

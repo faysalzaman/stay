@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:stay/screens/auth/Welcomeback/welcomeback_screen.dart';
 import 'package:stay/screens/splash_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 

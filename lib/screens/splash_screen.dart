@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:stay/screens/auth/Welcomeback/welcomeback_screen.dart';
 import 'package:stay/screens/localization_screen/select_language_screen.dart';
-import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -41,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     _controller.forward().then((_) {
-      AppNavigator.pushReplacement(context, const WelcomeBackScreen());
+      AppNavigator.pushReplacement(context, const SelectLanguageScreen());
     });
   }
 

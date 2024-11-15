@@ -1,16 +1,13 @@
-
 import 'dart:async';
-
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 import 'package:stay/screens/auth/EmailAuth/Forget/new_password_screen.dart';
 import 'package:stay/utils/app_colors.dart';
+import 'package:stay/utils/app_navigator.dart';
 import 'package:stay/widgets/ElevatedButtonWidget.dart';
-import 'package:stay/widgets/app_navigator.dart';
-
-import '../../../../widgets/text_widget.dart';
+import 'package:stay/widgets/text_widget.dart';
 
 class ForgotOtpScreen extends StatefulWidget {
   const ForgotOtpScreen({super.key});
@@ -20,7 +17,6 @@ class ForgotOtpScreen extends StatefulWidget {
 }
 
 class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
-
   late Timer _timer;
   int _start = 180; // Set timer duration to 3 minutes (180 seconds)
 
@@ -44,8 +40,10 @@ class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
 
   String formatTime(int seconds) {
     final duration = Duration(seconds: seconds);
-    final minutesStr = duration.inMinutes.remainder(60).toString().padLeft(2, '0');
-    final secondsStr = duration.inSeconds.remainder(60).toString().padLeft(2, '0');
+    final minutesStr =
+        duration.inMinutes.remainder(60).toString().padLeft(2, '0');
+    final secondsStr =
+        duration.inSeconds.remainder(60).toString().padLeft(2, '0');
     return "$minutesStr:$secondsStr";
   }
 
@@ -54,7 +52,6 @@ class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
     _timer.cancel();
     super.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -105,19 +102,18 @@ class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
             ),
             SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                children: [
-                  AppText.heading("Check Your Email", maxline: 2),
-                ],
-              )
-            ),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  children: [
+                    AppText.heading("Check Your Email", maxline: 2),
+                  ],
+                )),
             SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: AppText.subHeading(
                 "Please check your email for OTP and enter it here"
-                    "\n in order to continue.",
+                "\n in order to continue.",
                 maxline: 2,
                 color: AppColors.onboadingsubtextcolor,
               ),
@@ -141,7 +137,11 @@ class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
               defaultPinTheme: PinTheme(
                 width: 48,
                 height: 48,
-                textStyle: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.w400, fontFamily: GoogleFonts.inter().fontFamily),
+                textStyle: TextStyle(
+                    fontSize: 24,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: GoogleFonts.inter().fontFamily),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
@@ -151,7 +151,11 @@ class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
               focusedPinTheme: PinTheme(
                 width: 48,
                 height: 48,
-                textStyle: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.w400, fontFamily: GoogleFonts.inter().fontFamily),
+                textStyle: TextStyle(
+                    fontSize: 24,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: GoogleFonts.inter().fontFamily),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
@@ -161,7 +165,11 @@ class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
               submittedPinTheme: PinTheme(
                 width: 48,
                 height: 48,
-                textStyle: TextStyle(fontSize: 24, color: Colors.black, fontWeight: FontWeight.w400, fontFamily: GoogleFonts.inter().fontFamily),
+                textStyle: TextStyle(
+                    fontSize: 24,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: GoogleFonts.inter().fontFamily),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
@@ -192,10 +200,11 @@ class _ForgotOtpScreenState extends State<ForgotOtpScreen> {
               child: ElevatedButtonWidget(
                 buttonBackgroundColor: AppColors.bgcolor,
                 buttonHeight: 52,
-                buttonWidth: MediaQuery.of(context).size.width * 0.9, // Make button responsive to screen width
+                buttonWidth: MediaQuery.of(context).size.width *
+                    0.9, // Make button responsive to screen width
                 buttonborderRadius: 12,
                 onPressed: () {
-                  AppNavigator.goToPage(context: context, screen: NewPasswordScreen());
+                  AppNavigator.push(context, const NewPasswordScreen());
                 },
                 child: AppText.heading(
                   "Continue",

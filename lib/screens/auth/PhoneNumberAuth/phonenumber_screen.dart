@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:stay/screens/auth/PhoneNumberAuth/otpverification_screen.dart';
 import 'package:stay/utils/app_colors.dart';
+import 'package:stay/utils/app_navigator.dart';
 import 'package:stay/widgets/ElevatedButtonWidget.dart';
 import 'package:stay/widgets/TextFormFieldWidget.dart';
-import 'package:stay/widgets/app_navigator.dart';
+
 import 'package:stay/widgets/countrycode_widget.dart';
 import 'package:stay/widgets/text_widget.dart';
 
@@ -25,19 +25,20 @@ class _PhonenumberScreenState extends State<PhonenumberScreen> {
         backgroundColor: AppColors.onboardingbgcolor,
         toolbarHeight: 0.5,
       ),
-      body:  SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: GestureDetector(
-                onTap: (){
-                 Navigator.pop(context);
+                onTap: () {
+                  Navigator.pop(context);
                 },
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 20,),
+                  padding: const EdgeInsets.only(
+                    top: 20,
+                  ),
                   child: Row(
                     children: [
                       Container(
@@ -50,7 +51,11 @@ class _PhonenumberScreenState extends State<PhonenumberScreen> {
                         child: Center(
                           child: Padding(
                             padding: const EdgeInsets.only(left: 5.0),
-                            child: Icon(Icons.arrow_back_ios, color: Colors.black, size: 20,),
+                            child: Icon(
+                              Icons.arrow_back_ios,
+                              color: Colors.black,
+                              size: 20,
+                            ),
                           ),
                         ),
                       ),
@@ -59,35 +64,45 @@ class _PhonenumberScreenState extends State<PhonenumberScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 40,),
-            Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20,),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  AppText.heading("Login with Phone \nNumber",maxline: 2),
-
-                  Lottie.asset(
-                    'assets/lottie/number.json',
-                    fit: BoxFit.contain,
-                    height: 100,
-
-                  ),
-                ],
-              )
-
+            SizedBox(
+              height: 40,
             ),
-
-            SizedBox(height: 10,),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20,),
-              child:  AppText.subHeading("Please enter your phone number so we can send \n"
-                  "you an OTP for Verification.",maxline: 2,color: AppColors.onboadingsubtextcolor), ),
-
-            SizedBox(height: 70,),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppText.heading("Login with Phone \nNumber", maxline: 2),
+                    Lottie.asset(
+                      'assets/lottie/number.json',
+                      fit: BoxFit.contain,
+                      height: 100,
+                    ),
+                  ],
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: AppText.subHeading(
+                  "Please enter your phone number so we can send \n"
+                  "you an OTP for Verification.",
+                  maxline: 2,
+                  color: AppColors.onboadingsubtextcolor),
+            ),
+            SizedBox(
+              height: 70,
+            ),
             Row(
               children: [
-                SizedBox(width: 20,),
+                SizedBox(
+                  width: 20,
+                ),
                 CountryCodeDropdown(),
                 TextFormFieldWgt(
                   width: 230,
@@ -97,7 +112,9 @@ class _PhonenumberScreenState extends State<PhonenumberScreen> {
                 )
               ],
             ),
-            SizedBox(height: 40,),
+            SizedBox(
+              height: 40,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: ElevatedButtonWidget(
@@ -105,18 +122,18 @@ class _PhonenumberScreenState extends State<PhonenumberScreen> {
                 buttonHeight: 52,
                 buttonWidth: 350,
                 buttonborderRadius: 12,
-                onPressed: (){
-                  AppNavigator.goToPage(context: context, screen: OtpVerificationScreen());
+                onPressed: () {
+                  AppNavigator.push(context, const OtpVerificationScreen());
                 },
-                child: AppText.heading("Send OTP",
+                child: AppText.heading(
+                  "Send OTP",
                   letterSpacing: 1.0,
-                  fontsize: 14, color: Colors.white,
+                  fontsize: 14,
+                  color: Colors.white,
                   textAlign: TextAlign.center,
-
                 ),
               ),
             ),
-
           ],
         ),
       ),
