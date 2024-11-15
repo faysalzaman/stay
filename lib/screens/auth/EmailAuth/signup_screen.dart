@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:stay/screens/auth/EmailAuth/signin_screen.dart';
 import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
@@ -176,9 +177,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ],
               ),
             ),
-            SizedBox(
-              height: 50,
-            ),
+            SizedBox(height: 30),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: ElevatedButtonWidget(
@@ -198,9 +197,34 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 50,
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    // Handle Google sign in
+                  },
+                  child: Image.asset(
+                    'assets/images/google.png',
+                    height: 40,
+                    width: 40,
+                  ),
+                ),
+                SizedBox(width: 30),
+                GestureDetector(
+                  onTap: () {
+                    // Handle Facebook sign in
+                  },
+                  child: Image.asset(
+                    'assets/images/facebook.png',
+                    height: 40,
+                    width: 40,
+                  ),
+                ),
+              ],
             ),
+            SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
@@ -210,6 +234,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     "already_have_account".tr(),
                     fontWeight: FontWeight.bold,
                   ),
+                  5.width,
                   GestureDetector(
                     onTap: () {
                       AppNavigator.pop(context);
