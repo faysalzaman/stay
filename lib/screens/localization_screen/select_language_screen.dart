@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:stay/screens/auth/EmailAuth/signin_screen.dart';
+import 'package:stay/screens/auth/Welcomeback/welcomeback_screen.dart';
 import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
 import 'package:lottie/lottie.dart';
@@ -100,7 +101,7 @@ class SelectLanguageScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: ElevatedButton(
                 onPressed: () {
-                  AppNavigator.push(context, const SigninScreen());
+                  AppNavigator.push(context, const WelcomeBackScreen());
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primary,
