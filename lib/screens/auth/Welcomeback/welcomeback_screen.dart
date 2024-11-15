@@ -16,7 +16,43 @@ class WelcomeBackScreen extends StatefulWidget {
   State<WelcomeBackScreen> createState() => _WelcomeBackScreenState();
 }
 
-class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
+class _WelcomeBackScreenState extends State<WelcomeBackScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _fadeAnimation;
+  late Animation<double> _scaleAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 5),
+      vsync: this,
+    );
+
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: const Interval(0.0, 0.5, curve: Curves.easeIn),
+      ),
+    );
+
+    _scaleAnimation = Tween<double>(begin: 0.95, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: const Interval(0.5, 1.0, curve: Curves.easeOut),
+      ),
+    );
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   // bool _switchValue = false;
 
   // void _changeLanguage(bool value) {
@@ -123,10 +159,21 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                   ),
                   SizedBox(height: 20),
                   Center(
-                    child: Image.asset(
-                      "assets/splash1.png",
-                      height: 300,
-                      fit: BoxFit.fill,
+                    child: AnimatedBuilder(
+                      animation: _controller,
+                      builder: (context, child) {
+                        return FadeTransition(
+                          opacity: _fadeAnimation,
+                          child: Transform.scale(
+                            scale: _scaleAnimation.value,
+                            child: Image.asset(
+                              "assets/splash1.png",
+                              height: 300,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],
