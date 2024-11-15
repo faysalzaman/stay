@@ -2,10 +2,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:stay/screens/auth/login/login_screen.dart';
+import 'package:stay/screens/auth/Welcomeback/welcomeback_screen.dart';
 import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
 import 'package:lottie/lottie.dart';
+import 'package:stay/widgets/text_widget.dart';
 
 class SelectLanguageScreen extends StatelessWidget {
   const SelectLanguageScreen({super.key});
@@ -13,62 +14,58 @@ class SelectLanguageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.lightBlue,
       body: SafeArea(
+        top: false,
         child: Column(
           children: [
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Container(
                 width: double.infinity,
                 // round below two corners
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30),
-                  ),
-                  color: AppColors.primary,
-                ),
-                child: Lottie.asset(
-                  'assets/lottie/language.json',
-                  fit: BoxFit.contain,
+                // decoration: const BoxDecoration(
+                //   borderRadius: BorderRadius.only(
+                //     bottomLeft: Radius.circular(30),
+                //     bottomRight: Radius.circular(30),
+                //   ),
+                //   color: AppColors.primary,
+                // ),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 50),
+                    Image.asset(
+                      'assets/logo1.png',
+                      height: 60,
+                      fit: BoxFit.contain,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10,),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          AppText.heading("WELCOME TO \nSTAY", color: AppColors.bgcolor,maxline: 2,textAlign: TextAlign.center,fontsize: 30),
+                          Lottie.asset(
+                            'assets/lottie/language.json',
+                            fit: BoxFit.contain,
+                            height: 140,
+
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Column(
                 children: [
-                  const SizedBox(height: 15),
-                  Image.asset(
-                    'assets/logo1.png',
-                    height: 80,
-                    fit: BoxFit.contain,
-                  ),
-                  const SizedBox(height: 15),
-                  Text(
-                    'welcome'.tr(),
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.primary,
-                    ),
-                  ),
-                  Text(
-                    'lets_get_started'.tr(),
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: AppColors.primary,
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                  Text(
-                    'select_language'.tr(),
-                    style: const TextStyle(
-                      fontSize: 20,
-                      color: AppColors.primary,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
+
+                  const SizedBox(height: 10),
+                  AppText.subHeading("Let's get Started with Select Language"),
+                  const SizedBox(height: 100),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -100,7 +97,9 @@ class SelectLanguageScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: ElevatedButton(
                 onPressed: () {
-                  AppNavigator.push(context, const LoginScreen());
+                  AppNavigator.push(context, const WelcomeBackScreen());
+                  // Navigate to next screen
+                  // AppNavigator.push(context, const LoginScreen());
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primary,
@@ -168,7 +167,7 @@ class _LanguageButtonState extends State<_LanguageButton>
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: widget.isSelected ? Colors.blue : Colors.white,
+          color: widget.isSelected ? AppColors.bgcolor : Colors.white,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             color: const Color(0xFFE5EDF5),

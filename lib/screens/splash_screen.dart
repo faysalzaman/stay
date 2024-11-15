@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:stay/screens/auth/Welcomeback/welcomeback_screen.dart';
 import 'package:stay/screens/localization_screen/select_language_screen.dart';
+import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -39,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     _controller.forward().then((_) {
-      AppNavigator.pushReplacement(context, const SelectLanguageScreen());
+      AppNavigator.pushReplacement(context, const WelcomeBackScreen());
     });
   }
 
@@ -52,6 +54,11 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        toolbarHeight: 0.5,
+      ),
       body: Stack(
         fit: StackFit.expand,
         children: [

@@ -30,4 +30,8 @@ class AppNavigator {
       PageTransition(child: page, type: PageTransitionType.fade),
     );
   }
+
+
+
+
 }
