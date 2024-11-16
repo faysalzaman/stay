@@ -58,9 +58,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.onboardingbgcolor,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: AppColors.onboardingbgcolor,
+        backgroundColor: Colors.white,
         toolbarHeight: 0.5,
       ),
       body: Padding(

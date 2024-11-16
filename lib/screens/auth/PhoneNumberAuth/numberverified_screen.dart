@@ -25,29 +25,24 @@ class _NumberVerifiedScreenState extends State<NumberVerifiedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.onboardingbgcolor,
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.asset(
-              repeat: false,
-              'assets/lottie/verified.json',
-              fit: BoxFit.contain,
-              height: 300,
-            ),
+            Image.asset("assets/images/featured icon.png"),
             SizedBox(
               height: 30,
             ),
-            AppText.heading("otp_verification".tr()),
-            SizedBox(
-              height: 20,
-            ),
-            AppText.subHeading("enter_code_sms".tr(),
-                color: AppColors.onboadingsubtextcolor,
+            AppText.heading("Phone Number Verified"),
+            SizedBox(height: 20,),
+            AppText.subHeading("You will be redirected to the main page \n"
+                "in a few moments",color: AppColors.onboadingsubtextcolor,
                 maxline: 2,
                 textAlign: TextAlign.center,
-                fontWeight: FontWeight.w500)
+                fontWeight: FontWeight.w500
+
+            )
           ],
         ),
       ),
