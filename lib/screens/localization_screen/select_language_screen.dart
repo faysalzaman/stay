@@ -5,7 +5,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:stay/screens/auth/Welcomeback/welcomeback_screen.dart';
 import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
-import 'package:lottie/lottie.dart';
 import 'package:stay/widgets/ElevatedButtonWidget.dart';
 import 'package:stay/widgets/text_widget.dart';
 
@@ -17,9 +16,7 @@ class SelectLanguageScreen extends StatefulWidget {
 }
 
 class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
-
   String selected = 'en';
-
 
   @override
   Widget build(BuildContext context) {
@@ -83,26 +80,26 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
                         setState(() {
                           selected = 'en';
                         });
-
                       },
                       child: Container(
                         height: 100,
                         width: 150,
                         decoration: BoxDecoration(
-                          color:  Colors.white,
+                          color: Colors.white,
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 7,
-                              offset: const Offset(0, 3), // changes position of shadow
+                              offset: const Offset(
+                                  0, 3), // changes position of shadow
                             ),
                           ],
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                            color: selected == "en" ? Colors.blue : Colors.white,
-                            width: 2
-                          ),
+                              color:
+                                  selected == "en" ? Colors.blue : Colors.white,
+                              width: 2),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -117,7 +114,9 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: selected == "en" ? AppColors.bgcolor : Colors.black,
+                                color: selected == "en"
+                                    ? AppColors.bgcolor
+                                    : Colors.black,
                               ),
                             ),
                           ],
@@ -128,28 +127,29 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
                     GestureDetector(
                       onTap: () {
                         // context.setLocale(const Locale('en'));
-                       setState(() {
-                         selected = 'ar';
-                       });
+                        setState(() {
+                          selected = 'ar';
+                        });
                       },
                       child: Container(
                         height: 100,
                         width: 150,
                         decoration: BoxDecoration(
-                          color:  Colors.white,
+                          color: Colors.white,
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 7,
-                              offset: const Offset(0, 3), // changes position of shadow
+                              offset: const Offset(
+                                  0, 3), // changes position of shadow
                             ),
                           ],
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                            color: selected == "ar" ? Colors.blue : Colors.white,
-                            width: 2
-                          ),
+                              color:
+                                  selected == "ar" ? Colors.blue : Colors.white,
+                              width: 2),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -164,7 +164,9 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                                color: selected == "ar" ? AppColors.bgcolor : Colors.black,
+                                color: selected == "ar"
+                                    ? AppColors.bgcolor
+                                    : Colors.black,
                               ),
                             ),
                           ],

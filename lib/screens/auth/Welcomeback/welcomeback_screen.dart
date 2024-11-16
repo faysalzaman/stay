@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:stay/screens/auth/EmailAuth/signup_screen.dart';
 import 'package:stay/screens/auth/PhoneNumberAuth/otpverification_screen.dart';
-import 'package:stay/screens/auth/PhoneNumberAuth/phonenumber_screen.dart';
 import 'package:stay/screens/home/home_screen.dart';
 import 'package:stay/utils/app_colors.dart';
 import 'package:stay/utils/app_navigator.dart';
@@ -11,7 +9,6 @@ import 'package:stay/widgets/ElevatedButtonWidget.dart';
 import 'package:stay/widgets/TextFormFieldWidget.dart';
 import 'package:stay/widgets/countrycode_widget.dart';
 import 'package:stay/widgets/text_widget.dart';
-import 'package:lottie/lottie.dart';
 
 class WelcomeBackScreen extends StatefulWidget {
   const WelcomeBackScreen({super.key});
@@ -111,8 +108,7 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen>
                   )
                 ],
               ),
-          
-          
+
               SizedBox(height: 40),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -133,9 +129,9 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen>
                   ),
                 ),
               ),
-          
+
               SizedBox(height: 20),
-          
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
@@ -181,10 +177,10 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen>
                             color: Colors.grey.withOpacity(0.5),
                             spreadRadius: 1,
                             blurRadius: 7,
-                            offset: const Offset(0, 3), // changes position of shadow
+                            offset: const Offset(
+                                0, 3), // changes position of shadow
                           ),
                         ],
-
                       ),
                       child: Image.asset(
                         'assets/images/google.png',
@@ -209,10 +205,10 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen>
                             color: Colors.grey.withOpacity(0.5),
                             spreadRadius: 1,
                             blurRadius: 7,
-                            offset: const Offset(0, 3), // changes position of shadow
+                            offset: const Offset(
+                                0, 3), // changes position of shadow
                           ),
                         ],
-
                       ),
                       child: Image.asset(
                         'assets/images/facebook.png',
@@ -227,7 +223,7 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen>
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     AppNavigator.pushReplacement(context, const HomeScreen());
                   },
                   child: Container(
@@ -266,7 +262,6 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen>
               SizedBox(
                 height: 50,
               ),
-          
             ],
           ),
         ));
