@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stay/screens/home/home_screen.dart';
-import 'package:stay/utils/app_colors.dart';
-import 'package:stay/utils/app_navigator.dart';
-import 'package:stay/widgets/text_widget.dart';
+import 'package:stay_app/screens/home/home_screen.dart';
+import 'package:stay_app/utils/app_colors.dart';
+import 'package:stay_app/utils/app_navigator.dart';
+import 'package:stay_app/widgets/text_widget.dart';
 
 class NumberVerifiedScreen extends StatefulWidget {
   const NumberVerifiedScreen({super.key});

@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:stay/screens/auth/PhoneNumberAuth/numberverified_screen.dart';
-import 'package:stay/utils/app_colors.dart';
-import 'package:stay/utils/app_navigator.dart';
-import 'package:stay/widgets/ElevatedButtonWidget.dart';
+import 'package:stay_app/screens/auth/PhoneNumberAuth/numberverified_screen.dart';
+import 'package:stay_app/utils/app_colors.dart';
+import 'package:stay_app/utils/app_navigator.dart';
+import 'package:stay_app/widgets/ElevatedButtonWidget.dart';
 
-import 'package:stay/widgets/text_widget.dart';
+import 'package:stay_app/widgets/text_widget.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   const OtpVerificationScreen({super.key});

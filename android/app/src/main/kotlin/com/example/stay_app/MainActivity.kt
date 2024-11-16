@@ -1,4 +1,4 @@
-package com.codesink.stay
+package com.example.stay_app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:stay/screens/auth/PhoneNumberAuth/otpverification_screen.dart';
-import 'package:stay/utils/app_colors.dart';
-import 'package:stay/utils/app_navigator.dart';
-import 'package:stay/widgets/ElevatedButtonWidget.dart';
-import 'package:stay/widgets/TextFormFieldWidget.dart';
+import 'package:stay_app/screens/auth/PhoneNumberAuth/otpverification_screen.dart';
+import 'package:stay_app/utils/app_colors.dart';
+import 'package:stay_app/utils/app_navigator.dart';
+import 'package:stay_app/widgets/ElevatedButtonWidget.dart';
+import 'package:stay_app/widgets/TextFormFieldWidget.dart';
 
-import 'package:stay/widgets/countrycode_widget.dart';
-import 'package:stay/widgets/text_widget.dart';
+import 'package:stay_app/widgets/countrycode_widget.dart';
+import 'package:stay_app/widgets/text_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class PhonenumberScreen extends StatefulWidget {

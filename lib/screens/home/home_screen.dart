@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stay/utils/app_colors.dart';
+import 'package:stay_app/utils/app_colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class HomeScreen extends StatelessWidget {

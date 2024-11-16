@@ -1,8 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:stay/screens/localization_screen/select_language_screen.dart';
-import 'package:stay/utils/app_navigator.dart';
+import 'package:stay_app/screens/localization_screen/select_language_screen.dart';
+import 'package:stay_app/utils/app_navigator.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

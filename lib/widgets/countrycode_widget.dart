@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:stay/utils/app_colors.dart';
-import 'package:stay/widgets/text_widget.dart';
+import 'package:stay_app/utils/app_colors.dart';
+import 'package:stay_app/widgets/text_widget.dart';
 
 class CountryCodeDropdown extends StatefulWidget {
   @override

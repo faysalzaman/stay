@@ -1,4 +1,4 @@
-# stay
+# stay_app
 
 A new Flutter project.
 
